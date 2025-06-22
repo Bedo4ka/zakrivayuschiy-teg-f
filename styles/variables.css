@@ -2,7 +2,6 @@
 :root {
   --base-font: "Inter-Variable";
   --variant-font: "PressStart2P-Regular";
-  --floppy-size: 21px;
   --button-text-color: #ffffff;
   --color-border: black;
   --main-font-size: 18px;
@@ -14,11 +13,14 @@
   --heart-hover: #000;
   --modal-padding-inline: 30px;
   --modal-color: black;
+  --text-header-size: 23px;
+  --font-size-logo: 65px;
 }
 
 @media (width <= 375px) {
   :root {
-    --floppy-size: 28px;
     --modal-padding-inline: 40px;
+    --text-header-size: 14px;
+    --font-size-logo: 49px;
   }
 }
