@@ -148,8 +148,11 @@
   mix-blend-mode: hard-light;
 }
 
-@supports ((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
-  .article__img-label {
+@supports (
+  (text-stroke: 1px var(--bg-color)) or
+    (-webkit-text-stroke: 1px var(--bg-color))
+) {
+  .picture__card-label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--bg-color, #fff);
     text-stroke: 1px var(--bg-color, #fff);
@@ -214,7 +217,7 @@
 }
 
 .like-icon:active .core {
-  fill: #FF0000;
+  fill: #ff0000;
   transition-delay: 0s;
   transition-duration: 0.3s;
 }
@@ -232,25 +235,25 @@
 }
 
 .like-icon:active .main-body {
-  fill: #FF0000;
+  fill: #ff0000;
   transition-delay: 0.05s;
   transition-duration: 0.3s;
 }
 
 .like-icon.is-liked .core {
-  fill: #FF0000;
+  fill: #ff0000;
   transition-delay: 0s;
   transition-duration: 0.3s;
 }
 
 .like-icon.is-liked .main-body {
-  fill: #FF0000;
+  fill: #ff0000;
   transition-delay: 0.05s;
   transition-duration: 0.3s;
 }
 
 .like-icon.is-liked .contour {
-  fill: #FF0000;
+  fill: #ff0000;
   transition-delay: 0.06s;
   transition-duration: 0.3s;
 }
@@ -326,15 +329,6 @@
   justify-self: center;
   align-self: center;
   padding-block: 50px 105px;
-}
-
-.floppy {
-  /* position: relative;
-  z-index: 1; */
-  color: red;
-  inline-size: var(--floppy-size, 28px);
-  block-size: var(--floppy-size, 28px);
-  /* mix-blend-mode: difference; */
 }
 
 .floppy--modal {

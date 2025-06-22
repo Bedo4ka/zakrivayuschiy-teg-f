@@ -8,14 +8,13 @@
   --main-font-size: 18px;
   --card-title-font-weight: 700;
   --label-font-size: 14px;
-  --bg-color:#fff;
+  --bg-color: #fff;
   --color-label: black;
   --variant-font-size: 14px;
   --heart-hover: #000;
   --modal-padding-inline: 30px;
-  --modal-color:black;
+  --modal-color: black;
 }
-
 
 @media (width <= 375px) {
   :root {
