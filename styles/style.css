@@ -95,7 +95,6 @@
 .card__title {
   font-weight: 700;
   font-size: var(--main-font-size, 18px);
-  line-height: normal;
   font-variation-settings: "wght" var(--card-title-font-weight, 700);
   padding: 5px 10px;
   line-height: 22px;
