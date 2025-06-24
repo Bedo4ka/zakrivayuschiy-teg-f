@@ -22,11 +22,11 @@
     </header>
     <main class="main container">
       <section class="section__content">
-        <article class="card">
+        <div class="card">
           <h2 class="card__title">
             Фритрек и нулевой спринт: Подготовка к работе
           </h2>
-        </article>
+        </div>
         <div class="picture__card">
           <picture>
             <source
@@ -34,7 +34,6 @@
               media="(width <= 375px)"
               srcset="./images/anticipation.jpg"
             />
-            <source type="image/jpg" srcset="./images/anticipation.jpg" />
             <img
               class="section__img"
               src="./images/anticipation.jpg"
@@ -90,9 +89,9 @@
         </div>
       </section>
       <section class="section__content">
-        <article class="card">
+        <div class="card">
           <h2 class="card__title">1 спринт: Я — чистый лист</h2>
-        </article>
+        </div>
         <div class="picture__card">
           <picture>
             <source
@@ -100,7 +99,6 @@
               media="(width <= 375px)"
               srcset="./images/giphy.gif"
             />
-            <source type="image/gif" srcset="./images/giphy.gif" />
             <img
               class="section__img section__img--grayscale"
               src="./images/giphy.gif"
@@ -158,9 +156,9 @@
         </div>
       </section>
       <section class="section__content">
-        <article class="card">
+        <div class="card">
           <h2 class="card__title">1 спринт: А если не получится?</h2>
-        </article>
+        </div>
         <div class="picture__card">
           <picture>
             <source
@@ -168,7 +166,6 @@
               media="(width <= 375px)"
               srcset="./images/misery.avif"
             />
-            <source type="image/avif" srcset="./images/misery.avif" />
             <img
               class="section__img section__img--saturate"
               src="./images/misery.avif"
@@ -224,9 +221,9 @@
         </div>
       </section>
       <section class="section__content">
-        <article class="card">
+        <div class="card">
           <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
-        </article>
+        </div>
         <div class="picture__card">
           <picture>
             <source
@@ -234,7 +231,6 @@
               media="(width <= 375px)"
               srcset="./images/unsplash.jpg"
             />
-            <source type="image/jpg" srcset="./images/unsplash.jpg" />
             <img
               class="section__img section__img--hue-rotate"
               src="./images/unsplash.jpg"
@@ -292,9 +288,9 @@
         </div>
       </section>
       <section class="section__content">
-        <article class="card">
+        <div class="card">
           <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
-        </article>
+        </div>
         <div class="picture__card">
           <picture>
             <source
@@ -302,7 +298,6 @@
               media="(width <= 375px)"
               srcset="./images/support.jpg"
             />
-            <source type="image/jpg" srcset="./images/support.jpg" />
             <img
               class="section__img section__img--mix"
               src="./images/support.jpg"
@@ -360,18 +355,14 @@
         </div>
       </section>
       <section class="section__content">
-        <article class="card">
+        <div class="card">
           <h2 class="card__title">3 спринт: Обходные стратегии</h2>
-        </article>
+        </div>
         <div class="picture__card">
           <picture>
             <source
               type="image/jpg"
               media="(width <= 375px)"
-              srcset="./images/sid-verma-8iNNNA_Kk0E-unsplash.jpg"
-            />
-            <source
-              type="image/jpg"
               srcset="./images/sid-verma-8iNNNA_Kk0E-unsplash.jpg"
             />
             <img
@@ -429,18 +420,14 @@
         </div>
       </section>
       <section class="section__content">
-        <article class="card">
+        <div class="card">
           <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
-        </article>
+        </div>
         <div class="picture__card">
           <picture>
             <source
               type="image/jpg"
               media="(width <= 375px)"
-              srcset="./images/joey-f-OxohnSQmTgY-unsplash.jpg"
-            />
-            <source
-              type="image/jpg"
               srcset="./images/joey-f-OxohnSQmTgY-unsplash.jpg"
             />
             <img
@@ -499,9 +486,9 @@
         </div>
       </section>
       <section class="section__content">
-        <article class="card">
+        <div class="card">
           <h2 class="card__title">«Сейчас я здесь»</h2>
-        </article>
+        </div>
         <div class="picture__card">
           <picture>
             <source
@@ -509,7 +496,6 @@
               media="(width <= 375px)"
               srcset="./images/world.jpg"
             />
-            <source type="image/jpg" srcset="./images/world.jpg" />
             <img
               class="section__img section__img--brightness"
               src="./images/world.jpg"
@@ -568,28 +554,31 @@
           </button>
         </div>
       </section>
-    </main>
-    <footer class="footer">
       <button
-        class="button save-button"
+        class="button save--button"
         type="button"
         onclick="window['dialog'].showModal()"
         aria-controls="dialog"
       >
-        <img class="floppy--modal" src="./svg/floppy.svg" alt="дискета" />
+        <svg class="floppy">
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
-    </footer>
-    <dialog id="dialog" class="modal">
-      <img class="floppy--modal" src="./svg/floppy.svg" alt="дискета" />
-      <h2 class="modal__title">вставьте дискету, чтобы продолжить</h2>
-      <button
-        type="button"
-        class="button save--button modal__button"
-        onclick="window['dialog'].close()">
-        <span class="button__text">ок</span>
-      </button>
-    </dialog>
+      <dialog id="dialog" class="modal">
+        <svg class="floppy floppy--modal">
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+        <h2 class="modal__title">вставьте дискету, чтобы продолжить</h2>
+        <button
+          type="button"
+          class="button save--button modal__button"
+          onclick="window['dialog'].close()"
+        >
+          <span class="button__text">ок</span>
+        </button>
+      </dialog>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

@@ -14,7 +14,6 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--base-font), sans-serif;
-  padding: 100px;
   font-variation-settings: "wght" 400;
   background: repeating-linear-gradient(
       90deg,
@@ -27,7 +26,11 @@
       transparent 2px 4px
     ),
     linear-gradient(180deg, rgba(231, 231, 231, 1) 0, rgba(26, 26, 26, 1) 100%);
+  background-attachment: fixed;
+  background-size: cover;
 }
+
+/* Хэдер */
 
 .header {
   padding-block: 100px;
@@ -39,26 +42,24 @@
   border: 2px solid var(--color-border, #000);
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-self: center;
   align-self: center;
-  padding: 128px 120px;
-}
-
-.container {
-  inline-size: clamp(min(100%, 375px), 50vw, 700px);
+  gap: 20px;
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) 0;
 }
 
 .header__logo {
   text-decoration: none;
   font-size: var(--font-size-logo);
-  font-family: var(--variant-font);
+  font-family: var(--variant-font), monospace;
   font-weight: 400;
+  text-align: center;
 }
 
 .header__title {
-  padding-top: 20px;
-  font-family: var(--variant-font);
-  font-size: var(--text-header-size);
+  font-family: var(--variant-font), monospace;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
@@ -71,18 +72,23 @@
   row-gap: 52px;
 }
 
+.container {
+  inline-size: var(--card-inline-size, min(100%, 700px));
+}
+
 .section__content {
   border: 2px solid var(--color-border, #000);
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-content: start;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, #fff);
 }
+
+/* Карточки */
 
 .card {
   display: grid;
-  padding-left: 10px;
   border-bottom: 2px solid var(--color-border, #000);
 }
 
@@ -91,12 +97,23 @@
   font-size: var(--main-font-size, 18px);
   line-height: normal;
   font-variation-settings: "wght" var(--card-title-font-weight, 700);
+  padding: 5px 10px;
+  line-height: 22px;
 }
 
 .picture__card {
   position: relative;
   border-bottom: 2px solid var(--main-color, #000);
 }
+
+.text__card {
+  font-weight: 400;
+  font-size: var(--main-font-size, 18px);
+  line-height: 21px;
+  padding: 25px;
+}
+
+/* Изображения и стилизация */
 
 .section__img {
   object-fit: cover;
@@ -138,7 +155,7 @@
   position: absolute;
   opacity: 0.5;
   color: var(--color-label, #000);
-  font-family: var(--variant-font);
+  font-family: var(--variant-font), monospace;
   font-size: var(--label-font-size, 14px);
   text-transform: uppercase;
   text-shadow: -1px 0 var(--bg-color, #fff), 0 1px var(--bg-color, #fff),
@@ -159,11 +176,48 @@
   }
 }
 
-.text__card {
-  font-weight: 400;
-  font-size: var(--main-font-size, 18px);
-  line-height: 21px;
-  padding: 25px;
+/* Кнопки Лайк */
+
+.button {
+  position: relative;
+  padding: 12.5px 37px;
+  border: 2px solid var(--color-border, #000);
+  background-color: var(--bg-color, #fff);
+  cursor: pointer;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color, #ffffff);
+  font-family: var(--variant-font, "PressStart2P"), monospace;
+  font-size: var(--variant-font-size);
+  line-height: 0.9;
+  mix-blend-mode: difference;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-border, #000);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.button:hover::after {
+  transform: scale(1);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--main-color, #000);
+  transition-duration: 0.3s;
 }
 
 .card__icon-button {
@@ -183,11 +237,20 @@
   border: 2px solid var(--color-border, #000);
   transition-duration: 0.3s;
   transition-timing-function: ease;
+  margin-right: 5px;
 }
 
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
+}
+
+.card__button-wrapper {
+  display: flex;
+  margin-inline: auto 0;
+  max-block-size: 38px;
+  margin-right: 25px;
+  margin-bottom: 25px;
 }
 
 .sparks {
@@ -274,65 +337,19 @@
   animation-duration: 0.3s;
 }
 
-.card__button-wrapper {
-  display: flex;
-  margin-inline: auto 0;
-  max-block-size: 38px;
-  margin-right: 25px;
-  margin-bottom: 25px;
-}
-
-.button__text {
+/* Дискета */
+.floppy {
   position: relative;
   z-index: 1;
-  color: var(--button-text-color);
-  font-family: var(--variant-font);
-  font-size: var(--variant-font-size);
-  line-height: 0.9;
+  color: var(--button-text-color, #fff);
+  inline-size: 39px;
+  block-size: 39px;
   mix-blend-mode: difference;
 }
 
-.button {
-  position: relative;
-  padding: 12.5px 37px;
-  border: 2px solid var(--color-border);
-  background-color: var(--bg-color);
-  cursor: pointer;
-}
-
-.card__like-button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-border);
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
-  transform: scaleX(0);
-  transform-origin: left center;
-}
-
-.button:hover::after {
-  transform: scale(1);
-}
-
-.button:focus {
-  outline: none;
-}
-
-.button:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--main-color, #000);
-  transition-duration: 0.3s;
-}
-
-.footer {
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  padding-block: 50px 105px;
-}
-
 .floppy--modal {
-  --floppy-size: 38px;
+  --floppy-size: 39px;
+  margin-top: 15px;
 }
 
 .save--button {
@@ -357,9 +374,9 @@
   grid-template-columns: auto auto;
   row-gap: 30px;
   column-gap: clamp(12px, 2vw, 20px);
-  padding: var(--modal-padding-inline, 30px) 30px;
+  padding: var(--modal-padding-inline, 30px);
   color: var(--modal-color, #000);
-  font-family: var(--variant-font);
+  font-family: var(--variant-font), monospace;
   font-size: var(--variant-font-size);
   line-height: 1.5;
   text-transform: uppercase;
@@ -376,8 +393,11 @@
   background-color: rgb(0 0 0 / 0.75);
 }
 
-
 @media (width <=375px) {
+  .page {
+    width: 100%;
+    min-width: 320px;
+  }
 
   .container {
     inline-size: clamp(375px, 100%, 700px);
@@ -386,16 +406,10 @@
   .header__logo {
     display: grid;
     justify-content: center;
+    align-self: center;
   }
 
   .floppy--modal {
-  --floppy-size: 28px;
-}
-
-  .modal[open] {
-    min-inline-size: 341px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    --floppy-size: 28px;
   }
 }
