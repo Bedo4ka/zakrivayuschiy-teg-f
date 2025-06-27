@@ -363,9 +363,10 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin: 0 auto;
+  margin: auto;
   padding: 15px 20px;
   max-inline-size: 83vw;
+  margin-bottom: 50px;
 }
 
 .modal__button {
@@ -374,7 +375,7 @@
   inline-size: 100%;
 }
 
-.modal[open] {
+.modal {
   display: grid;
   grid-template-columns: auto auto;
   row-gap: 30px;

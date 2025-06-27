@@ -20,7 +20,6 @@
 
 @media (width <= 375px) {
   :root {
-    /* --modal-padding-inline: 40px; */
     --text-header-size: 14px;
     --font-size-logo: 49px;
   }
