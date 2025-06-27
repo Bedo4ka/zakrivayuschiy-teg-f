@@ -69,7 +69,7 @@
   display: grid;
   justify-self: center;
   align-self: center;
-  row-gap: 52px;
+  row-gap: 50px;
 }
 
 .container {
@@ -110,6 +110,10 @@
   font-size: var(--main-font-size, 18px);
   line-height: 21px;
   padding: 25px;
+}
+
+.text__card:last-of-type {
+  padding-top: 0;
 }
 
 /* Изображения и стилизация */
@@ -341,14 +345,16 @@
   position: relative;
   z-index: 1;
   color: var(--button-text-color, #fff);
-  inline-size: 39px;
-  block-size: 39px;
+  inline-size: 21px;
+  block-size: 21px;
   mix-blend-mode: difference;
 }
 
 .floppy--modal {
   --floppy-size: 39px;
-  margin-top: 15px;
+  inline-size: 39px;
+  block-size: 39px;
+  margin-top: 11px;
 }
 
 .save--button {
@@ -383,6 +389,11 @@
   max-inline-size: 357px;
 }
 
+.button__assent {
+  height: 38px;
+  width: 293px;
+}
+
 .modal__title {
   font-size: var(--variant-font-size);
   line-height: 1.5;
@@ -398,17 +409,36 @@
     min-width: 320px;
   }
 
-  .container {
-    inline-size: clamp(375px, 100%, 700px);
-  }
-
   .header__logo {
     display: grid;
     justify-content: center;
     align-self: center;
   }
 
-  .floppy--modal {
+  .save--button {
+    gap: 10px;
+  }
+
+  .floppy {
     --floppy-size: 28px;
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .modal {
+    max-inline-size: 341px;
+    padding: 30px 45px;
+  }
+
+  .floppy--modal {
+    --floppy-size: 39px;
+    inline-size: 39px;
+    block-size: 39px;
+    margin-top: 11px;
+  }
+
+  .button__assent {
+    width: 257px;
+    height: 40px;
   }
 }
