@@ -375,7 +375,7 @@
   inline-size: 100%;
 }
 
-.modal[open]  {
+.modal[open] {
   display: grid;
   grid-template-columns: auto auto;
   row-gap: 30px;
