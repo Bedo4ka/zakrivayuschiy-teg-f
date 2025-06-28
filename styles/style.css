@@ -366,7 +366,7 @@
   margin: auto;
   padding: 15px 20px;
   max-inline-size: 83vw;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .modal__button {
@@ -391,8 +391,7 @@
 }
 
 .button__assent {
-  height: 38px;
-  width: 293px;
+  padding: 10px 129px;
 }
 
 .modal__title {
@@ -427,8 +426,12 @@
   }
 
   .modal[open] {
-    max-inline-size: 341px;
-    padding: 30px 42px;
+    padding: 30px 40px;
+    column-gap: 20px;
+  }
+
+  .modal__title {
+    max-width: 198px;
   }
 
   .floppy--modal {
@@ -439,7 +442,6 @@
   }
 
   .button__assent {
-    width: 257px;
-    height: 40px;
+    padding: 10.5px;
   }
 }
